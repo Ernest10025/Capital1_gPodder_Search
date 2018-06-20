@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Search by Genre</h1>
+  <h5>Type the genre of podcasts you would like to search for then click enter</h5>
+  <style>
+    body{background-color:#cce6ff}
+  </style>
+  <form class="navbar-form navbar-left" role="search" method="POST">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Genre" name="text">
+    </div>
+    <button type="submit" class="btn btn-default">Search</button>
+  </form><br>
+  <br><br>
+  <h3>Results</h3>
+  <div class="list-group">
+    {% for podcast in searched_genre %}
+      <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{podcast.title}}</h5>
+          <small><font>{{podcast.subscribers}} Subscribers</font></small><br>
+        </div>
+        <p class="mb-1">{{podcast.description}}</p>
+        <br>
+    {% endfor %}
+  </div>
+{% endblock %}
