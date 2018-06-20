@@ -3,7 +3,6 @@ from gPodder_funcs import basic_search, popularity_search, genre_search, user_su
 
 app= Flask(__name__)
 app.secret_key = '89 ca 6b fe 9e a3 01 e4 bf 50'
-app.debug = True
 
 @app.route('/')
 def index():
@@ -78,7 +77,7 @@ def search_by_genre():
 
 
 if __name__=="__main__":
-    app.run(debug=True )
+    app.run()
 
 
 
